@@ -1,0 +1,36 @@
+<h1>This is user profile</h1>
+
+<!-- Interpolation Example -->
+<!-- Injecting typescript code variables into Template using interpolation -->
+<h4>Name-{{name}} Status-{{status}} Salary-{{salary}}</h4>
+
+<!-- ONE WAY DATA BINDING -->
+<!-- OR Property Binding Example -->
+<!-- <button disabled="true">Click Me</button>
+kisi bhi tag ki property to apne template variable se jodne ka tarika -->
+<button [disabled]="isBtnDisables">Click Me</button>
+
+<!-- Event Binding -->
+<!-- HTML me hmare pass sare events on... karke start karte ha for ex: -->
+<input type="text" onchange="">
+
+<!-- But angular me event attach ke liye on... hata ke likho -->
+<!-- aur us event ko round brackets me daal do -->
+<!-- <input type="text" (change)="onChangeFn()"> -->
+
+<input type="text" (input)="onChangeFn($event)">
+
+<!-- ONE way data binding example -->
+    <!-- ONE way DATA binding -->
+    <input type="text" [value]="inputValue">
+
+<!-- TWO way data binding example -->
+    <h1>input value - {{twoWayDataBindingValue}}</h1>
+    <!-- ONE way DATA binding -->
+    <input type="text" [value]="twoWayDataBindingValue" (input)="onChangeTwoWayFn($event)">
+
+ <!-- Lekin ab TWO way data binding ka code bahut chhota ho gya hai    -->
+ <!-- Syntax name : banana in the box
+ isme koi function call bhi nahi karna pada, bas type script file me FormsModule ye import karna pada bas -->
+ <h1>2 way Data Binding with ngModel Value : {{demoTwoWayDB}}</h1>
+ <input type="text" [(ngModel)]="demoTwoWayDB">
