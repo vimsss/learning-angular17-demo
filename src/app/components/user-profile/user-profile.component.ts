@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.css'
 })
@@ -16,6 +17,12 @@ export class UserProfileComponent {
   isBtnDisables=false
   inputValue="test"
   twoWayDataBindingValue="2way Data Binding test"
+
+  users=[
+    {name:"Ramesh",isSingle:true,salary:10000},
+    {name:"Suresh",isSingle:false,salary:60000},
+    {name:"Nitesh",isSingle:true,salary:90000}
+  ]
 
   demoTwoWayDB="Test"
   // onChangeFn()
