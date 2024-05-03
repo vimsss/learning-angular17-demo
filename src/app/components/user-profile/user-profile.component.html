@@ -26,7 +26,7 @@ kisi bhi tag ki property to apne template variable se jodne ka tarika -->
 
 <!-- TWO way data binding example -->
     <h1>input value - {{twoWayDataBindingValue}}</h1>
-    <!-- ONE way DATA binding -->
+    <!-- TWO way DATA binding -->
     <input type="text" [value]="twoWayDataBindingValue" (input)="onChangeTwoWayFn($event)">
 
  <!-- Lekin ab TWO way data binding ka code bahut chhota ho gya hai    -->
@@ -46,7 +46,7 @@ kisi bhi tag ki property to apne template variable se jodne ka tarika -->
 
  <h2>-------------------If Else Example Using Angular17(for if else Syntax)--------------------------</h2>
  <div>  
-    <!-- Ye for loop, ya if else annotations kisi loop pe nahi laga hai -->
+    <!-- Ye for loop, ya if else annotations kisi element pe nahi laga hai -->
     <!-- Aur is code ke liye koi dependency add nahi karni padi -->
  @for (u of users;track u.name){
     @if(u.salary>10000){
@@ -62,16 +62,17 @@ kisi bhi tag ki property to apne template variable se jodne ka tarika -->
  <h2>-------------------For If Else Example Using Older Angular (using Directives)--------------------------</h2>
  <!-- Jo Directives hota hai wo kisi elements pe lagana padta hai, unlike angular 17 -->
  <!-- But yha pe CommonModule naam ki ek dependency bhi add karni padti hai  -->
- <!-- Directive : Directive hum kisi elements pe lagate hain uska behaviour change karne ke liye, ye hmari bani banayi(inbuilt) classes hoti hain. lekin hum apna khud ka bhi directives bana sakte hain-->
+ <!-- Directive : Directive hum kisi elements pe lagate hain uska behaviour change karne ke liye,
+     ye hmari bani banayi(inbuilt) classes hoti hain. lekin hum apna khud ka bhi directives bana sakte hain-->
  <!-- Types : 2 types -->
- <!-- 1. Structured Directive : ye sare * se shuru hote hain, ngFor ngIf ye sab structured directives hain kyu ki ye hmare html ka
- structure change karte hai, ng-template hamesha structured directives ke sath use hota hai
- 2. Attribute directive : [(ngModel)] Attribute directive hai {used in 2 way binding}, kyu ki ye hmare html tag ka attribute change karta hai -->
+ <!-- 1. Structured Directive : ye sare * se shuru hote hain, ngFor ngIf ye sab structured directives hain
+     kyu ki ye hmare html ka structure change karte hai, ng-template hamesha structured 
+     directives ke sath use hota hai
+ 2. Attribute directive : [(ngModel)] Attribute directive hai {used in 2 way binding}, kyu ki ye hmare
+  html tag ka attribute change karta hai -->
  <div *ngFor="let u of users">  
     <h4 *ngIf="u.salary > 10000;else myelseWalaBlockName">Name:{{u.name}} Status:{{u.isSingle?"True":"False"}} Salary:{{u.salary}}</h4> 
     <ng-template #myelseWalaBlockName>
         <h4>Name:{{u.name}} Status:{{u.isSingle?"True":"False"}} Salary:hidden</h4> 
     </ng-template>
 </div>
-
-
