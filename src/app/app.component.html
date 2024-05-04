@@ -16,3 +16,9 @@
 
 <!-- ab hum bas ek loop me isko likhenge -->
 <app-parent-child-communication *ngFor="let u of users" [userName]="u.userName" [isSingle]="u.isSingle" [salary]="u.salary"></app-parent-child-communication>
+
+
+<!-- means agar ye event call g -->
+<app-child-parent-communication (myOwnEventEmitterName)="receivedDate($event)"></app-child-parent-communication>
+<app-child-parent-communication (myComplexEmitterKaNaam)="receiveComplexdDate($event)"></app-child-parent-communication>
+<app-child-parent-communication (myNewEventEmitter)="receiveNewDate($event)"></app-child-parent-communication>

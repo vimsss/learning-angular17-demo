@@ -31,7 +31,7 @@ export class ParentChildCommunicationComponent {
   // @Input() salary:string; ===> yha pe error aarha kyu ki compiler bol rha aap value initialise karo
 
   // !:  ===> is symbol ka matlab hota hai ki : "compiler bhai tum chinta mat karo, runtime ke samay hum iske pakka value bhejenge"
-  @Input({transform:booleanAttribute}) isSingle!:boolean; 
+  @Input({transform:booleanAttribute}) isSingle!:boolean;
   // yha par hum inbuilt transform methods use karrahe jo string -to-> boolean conversion , aur 
   // string -to-> number conversion ke liye useful hota hai
   @Input({transform:numberAttribute}) salary!:string;
